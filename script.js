@@ -5,7 +5,7 @@ document.body.appendChild(getSumBtn);
 const getSum = () => {
 //Add your code here
 const nodeList = document.querySelectorAll(".price");
-const table = document.querySelector('table')
+const body = document.querySelector('body')
 console.log(nodeList);
 let sum = 0;
             
@@ -15,12 +15,10 @@ for(var i = 0; i < nodeList.length; i++)
 	console.log(nodeList[i].innerHTML);
 	
 }
-const totalRow = document.createElement("tr");
-totalRow.innerHTML = `<tr>
-<td class="item">Total</td>
-<td class="price">${sum}</td>
-</tr>`;
-table.appendChild(totalRow);
+const ans = document.createElement("p");
+ans.setAttribute("id", "ans");
+ans.innerHTML = `Total:${sum}`;
+document.body.appendChild(ans);
 console.log(sum);
 
 	  
