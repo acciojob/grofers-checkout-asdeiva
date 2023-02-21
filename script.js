@@ -4,18 +4,25 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
 //Add your code here
-	let price = document.querySelectorAll(".prices") 
-	let sum = 0
-	for (let i of price) {
-		sum+=price[i]
-	}
+const nodeList = document.querySelectorAll(".price");
+const table = document.querySelector('table')
+console.log(nodeList);
+let sum = 0;
+            
+for(var i = 0; i < nodeList.length; i++)
+{
+	sum += parseInt(nodeList[i].innerHTML) ;
+	console.log(nodeList[i].innerHTML);
 	
-	let tot = `<tr>
-      <td class="item">Total</td>
-      <td class="price">${sum}</td>
-    </tr>`;
-	const total = document.createElement(tot);
-	document.table.appendChild(total);
+}
+const totalRow = document.createElement("tr");
+totalRow.innerHTML = `<tr>
+<td class="item">Total</td>
+<td class="price">${sum}</td>
+</tr>`;
+table.appendChild(totalRow);
+console.log(sum);
+
 	  
 };
 
